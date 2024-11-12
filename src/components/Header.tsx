@@ -7,7 +7,22 @@ export default function Header() {
             WOOngSalad
           </li>
           <li className="hover:text-blue-500 cursor-pointer transition-colors">
-            예적금
+            정기예금
+          </li>
+          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+            적금
+          </li>
+          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+            연금 저축
+          </li>
+          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+            주택담보대출
+          </li>
+          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+            전세자금대출
+          </li>
+          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+            개인신용대출
           </li>
         </ul>
       </nav>
