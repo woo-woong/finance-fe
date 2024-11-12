@@ -7,8 +7,14 @@ import { FinanceProduct } from './models/finance-product.interface';
 
 function App() {
   const API_URL = 'http://localhost:8080/finance/deposit';
+  const DEFAULT_VISIBLE_COUNT = 3;
   const [finProducts, setFinProducts] = useState<FinanceProduct[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
+  const [visibleCount, setVisibleCount] = useState(DEFAULT_VISIBLE_COUNT);
+
+  const loadMoreProducts = () => {
+    setVisibleCount((prevCount) => prevCount + DEFAULT_VISIBLE_COUNT);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -41,7 +47,7 @@ function App() {
     }
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
-        {finProducts.map((product) => (
+        {finProducts.slice(0, visibleCount).map((product) => (
           <Card key={product.finPrdtCd} product={product} />
         ))}
       </div>
@@ -53,6 +59,13 @@ function App() {
       <main className="flex flex-col items-center gap-10">
         <Header />
         {renderProductList()}
+        <button
+          type="button"
+          onClick={loadMoreProducts}
+          className="p-5 shadow-md rounded-md font-black"
+        >
+          more
+        </button>
       </main>
     </div>
   );
