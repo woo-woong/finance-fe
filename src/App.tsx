@@ -59,13 +59,15 @@ function App() {
       <main className="flex flex-col items-center gap-10">
         <Header />
         {renderProductList()}
-        <button
-          type="button"
-          onClick={loadMoreProducts}
-          className="p-5 shadow-md rounded-md font-black"
-        >
-          more
-        </button>
+        {finProducts && finProducts.length > visibleCount && (
+          <button
+            type="button"
+            onClick={loadMoreProducts}
+            className="p-5 shadow-md rounded-md font-black"
+          >
+            more
+          </button>
+        )}
       </main>
     </div>
   );
