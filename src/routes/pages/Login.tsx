@@ -31,7 +31,16 @@ export default function Login() {
         <hr className="w-full my-3 border-t border-gray-300" />
         <div className="flex flex-col items-center gap-2 mt-3">
           <h1 className="text-lg font-bold">SNS 로그인</h1>
-          <img src={kakaoLogo} alt="kakao-login" className="w-12" />
+          <button
+            type="button"
+            className="flex flex-col items-center gap-2 mt-3 transition-all duration-300 transform hover:scale-102 hover:shadow-lg active:scale-98"
+          >
+            <img
+              src={kakaoLogo}
+              alt="카카오 로그인"
+              className="w-12 transition-transform duration-300 cursor-pointer hover:scale-110"
+            />
+          </button>
           <p className="text-sm">카카오톡</p>
         </div>
       </form>
