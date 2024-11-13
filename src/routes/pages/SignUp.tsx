@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import DaumPost from '../../components/DaumPost';
 
 export default function SignUp() {
@@ -10,6 +10,10 @@ export default function SignUp() {
   ) => {
     setDetailAddress(e.target.value);
   };
+
+  useEffect(() => {
+    setDetailAddress('');
+  }, [address]);
 
   return (
     <div className="flex justify-center w-full">
@@ -140,6 +144,7 @@ export default function SignUp() {
                 required
                 value={detailAddress}
                 onChange={handleChangeDetailAddress}
+                disabled={address.length === 0}
               />
             </label>
 
