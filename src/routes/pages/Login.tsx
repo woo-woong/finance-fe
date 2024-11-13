@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import kakaoLogo from '../../assets/images/kakao-login.png';
 
 export default function Login() {
@@ -28,7 +29,10 @@ export default function Login() {
         </button>
         <nav>
           <ul className="flex gap-2 p-4">
-            <li>아이디 찾기</li> |<li>비밀번호 찾기</li> |<li>회원가입</li>
+            <li>아이디 찾기</li> |<li>비밀번호 찾기</li> |
+            <NavLink to="/signup">
+              <li>회원가입</li>
+            </NavLink>
           </ul>
         </nav>
         <hr className="w-full my-3 border-t border-gray-300" />
@@ -45,7 +49,7 @@ export default function Login() {
               className="w-12 transition-transform duration-300 cursor-pointer hover:scale-110"
             />
           </button>
-          <p className="text-sm">카카오톡</p>
+          <p className="text-sm font-medium">카카오톡</p>
         </div>
       </form>
     </div>
