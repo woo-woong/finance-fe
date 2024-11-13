@@ -10,8 +10,8 @@ export default function ProductList({
 }) {
   const { finProducts, error, visibleCount, isLoading, loadMoreProducts } =
     useFinProducts({
-      path: path,
-      searchParams: searchParams,
+      path,
+      searchParams,
       defaultVisibleCount: 3,
     });
 
