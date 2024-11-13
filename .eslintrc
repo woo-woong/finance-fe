@@ -1,4 +1,5 @@
 {
+  "globals": { "React": true },
   "extends": ["airbnb", "prettier"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],
