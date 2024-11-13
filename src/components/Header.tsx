@@ -9,7 +9,7 @@ export default function Header() {
             to="/"
             className="transition-colors cursor-pointer hover:text-blue-500"
           >
-            WOOngSalad
+            FinPoint
           </NavLink>
           <li className="flex space-x-8">
             <NavLink
