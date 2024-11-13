@@ -45,7 +45,7 @@ export default function Login() {
               className="w-12 transition-transform duration-300 cursor-pointer hover:scale-110"
             />
           </button>
-          <p className="text-sm">카카오톡</p>
+          <p className="text-sm font-medium">카카오톡</p>
         </div>
       </form>
     </div>
