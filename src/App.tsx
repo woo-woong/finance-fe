@@ -8,6 +8,7 @@ import MortgageLoan from './routes/pages/MortgageLoan';
 import RentHouseLoan from './routes/pages/RentHouseLoan';
 import CreditLoan from './routes/pages/CreditLoan';
 import Login from './routes/pages/Login';
+import SignUp from './routes/pages/SignUp';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: '/rent-house-loan', element: <RentHouseLoan /> },
       { path: '/credit-loan', element: <CreditLoan /> },
       { path: '/login', element: <Login /> },
+      { path: '/signup', element: <SignUp /> },
     ],
   },
 ]);
