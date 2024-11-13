@@ -5,7 +5,7 @@ export default function Login() {
     <div className="flex flex-col items-center p-20 rounded-md shadow-md">
       <h1 className="text-xl font-bold mb-7">로그인</h1>
       <form action="" className="flex flex-col items-center">
-        <div className="flex flex-col gap-2 mb-5">
+        <div className="flex flex-col w-full gap-2 mb-5">
           <input
             type="text"
             placeholder="아이디"
