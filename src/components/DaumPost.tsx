@@ -27,8 +27,12 @@ export default function DaumPost({ setAddress }: { setAddress: any }) {
     open({ onComplete: handleComplete });
   };
   return (
-    <button type="button" onClick={handleClick}>
-      Open
+    <button
+      type="button"
+      onClick={handleClick}
+      className="px-2 py-1 text-sm text-blue-500 transition-colors duration-200 border border-blue-500 rounded-md hover:bg-blue-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+    >
+      주소 검색
     </button>
   );
 }
