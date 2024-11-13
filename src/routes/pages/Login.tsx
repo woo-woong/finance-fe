@@ -1,6 +1,9 @@
 import kakaoLogo from '../../assets/images/kakao-login.png';
 
 export default function Login() {
+  const handleLoginClick = () => {
+    console.log('test');
+  };
   return (
     <div className="flex flex-col items-center p-20 rounded-md shadow-md">
       <h1 className="text-xl font-bold mb-7">로그인</h1>
@@ -34,6 +37,7 @@ export default function Login() {
           <button
             type="button"
             className="flex flex-col items-center gap-2 mt-3 transition-all duration-300 transform hover:scale-102 hover:shadow-lg active:scale-98"
+            onClick={handleLoginClick}
           >
             <img
               src={kakaoLogo}
