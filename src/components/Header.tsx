@@ -47,6 +47,7 @@ export default function Header() {
           >
             개인신용대출
           </NavLink>
+          <NavLink to="/login">로그인</NavLink>
         </ul>
       </nav>
     </header>
