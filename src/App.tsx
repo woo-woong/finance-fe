@@ -7,6 +7,7 @@ import AnnunitySavings from './routes/pages/AnnuitySavings';
 import MortgageLoan from './routes/pages/MortgageLoan';
 import RentHouseLoan from './routes/pages/RentHouseLoan';
 import CreditLoan from './routes/pages/CreditLoan';
+import Login from './routes/pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,7 @@ const router = createBrowserRouter([
       { path: '/mortgage-loan', element: <MortgageLoan /> },
       { path: '/rent-house-loan', element: <RentHouseLoan /> },
       { path: '/credit-loan', element: <CreditLoan /> },
+      { path: '/login', element: <Login /> },
     ],
   },
 ]);
