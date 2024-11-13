@@ -17,9 +17,12 @@ export default function Header() {
           >
             정기예금
           </NavLink>
-          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+          <NavLink
+            to="/savings"
+            className="hover:text-blue-500 cursor-pointer transition-colors"
+          >
             적금
-          </li>
+          </NavLink>
           <li className="hover:text-blue-500 cursor-pointer transition-colors">
             연금 저축
           </li>
