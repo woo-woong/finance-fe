@@ -1,6 +1,6 @@
 import { useDaumPostcodePopup } from 'react-daum-postcode';
 
-export default function DaumPost() {
+export default function DaumPost({ setAddress }: { setAddress: any }) {
   const scriptUrl =
     'https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
   const open = useDaumPostcodePopup(scriptUrl);
@@ -20,7 +20,7 @@ export default function DaumPost() {
       fullAddress += extraAddress !== '' ? ` (${extraAddress})` : '';
     }
 
-    console.log(fullAddress);
+    setAddress(fullAddress);
   };
 
   const handleClick = () => {

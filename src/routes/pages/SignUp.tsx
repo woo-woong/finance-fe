@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import DaumPost from '../../components/DaumPost';
 
 export default function SignUp() {
+  const [address, setAddress] = useState('');
+
   return (
     <div className="flex justify-center w-full">
       <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg">
@@ -113,11 +116,13 @@ export default function SignUp() {
                 name="address"
                 className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 required
+                value={address}
+                disabled
               />
             </label>
-            <DaumPost />
-          </div>
 
+            <DaumPost setAddress={setAddress} />
+          </div>
           <button
             type="submit"
             className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
