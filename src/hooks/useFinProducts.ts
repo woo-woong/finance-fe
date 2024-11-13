@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import ky from 'ky';
 import { FinanceProduct } from '../models/finance-product.interface';
 
@@ -12,6 +12,11 @@ export default function useFinProducts({
   defaultVisibleCount: number;
 }) {
   const API_URL = `http://localhost:8080/finance/${path}`;
+  const memoizedSearchParams = useMemo(
+    () => searchParams,
+    [JSON.stringify(searchParams)]
+  );
+
   const [finProducts, setFinProducts] = useState<FinanceProduct[] | null>(null);
   const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +32,7 @@ export default function useFinProducts({
         setIsLoading(true);
         const response = await ky
           .get(API_URL, {
-            searchParams,
+            searchParams: memoizedSearchParams,
           })
           .json<FinanceProduct[]>();
 
@@ -40,7 +45,7 @@ export default function useFinProducts({
       }
     };
     fetchData();
-  }, [path, searchParams]);
+  }, [path, memoizedSearchParams]);
 
   return {
     finProducts,
