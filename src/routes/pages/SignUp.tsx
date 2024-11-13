@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import ky from 'ky';
 import DaumAddress from '../../components/DaumAddress';
 import SignUpFormInput from '../../components/SignUpFormInput';
 
@@ -33,6 +34,23 @@ export default function SignUp() {
     }
   };
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const response = await ky.post('/signup', {
+        json: formData,
+      });
+
+      if (response.ok) {
+        console.log('회원가입 성공');
+      } else {
+        console.error('회원가입 실패');
+      }
+    } catch (error) {
+      console.error('에러 발생', error);
+    }
+  };
+
   useEffect(() => {
     setFormData((prevFormData) => ({ ...prevFormData, detailAddress: '' }));
   }, [formData.address]);
@@ -41,7 +59,7 @@ export default function SignUp() {
     <div className="flex justify-center w-full">
       <div className="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg">
         <h2 className="mb-6 text-2xl font-bold text-center">회원가입</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <SignUpFormInput
             label="아이디"
             type="text"
