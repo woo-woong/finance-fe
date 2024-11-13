@@ -19,11 +19,16 @@ export default function Login() {
         </div>
         <button
           type="button"
-          className="w-full p-3 transition-colors bg-blue-200 border rounded-sm cursor-pointer hover:bg-blue-400"
+          className="w-full p-3 font-semibold transition-colors bg-blue-200 border rounded-sm cursor-pointer hover:bg-blue-400"
         >
           로그인
         </button>
-        <hr className="w-full my-5 border-t border-gray-300" />
+        <nav>
+          <ul className="flex gap-2 p-4">
+            <li>아이디 찾기</li> |<li>비밀번호 찾기</li> |<li>회원가입</li>
+          </ul>
+        </nav>
+        <hr className="w-full my-3 border-t border-gray-300" />
         <div className="flex flex-col items-center gap-2 mt-3">
           <h1 className="text-lg font-bold">SNS 로그인</h1>
           <img src={kakaoLogo} alt="kakao-login" className="w-12" />
