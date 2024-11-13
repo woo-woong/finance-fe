@@ -23,7 +23,7 @@ export default function RentHouseLoan() {
     }
 
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      <div className="grid grid-cols-1 gap-4 p-4 md:grid-cols-2 lg:grid-cols-3">
         {finProducts.slice(0, visibleCount).map((product) => (
           <Card key={product.finPrdtCd} product={product} />
         ))}
@@ -38,7 +38,7 @@ export default function RentHouseLoan() {
         <button
           type="button"
           onClick={loadMoreProducts}
-          className="p-5 shadow-md rounded-md font-black"
+          className="p-5 font-black rounded-md shadow-md"
         >
           more
         </button>
