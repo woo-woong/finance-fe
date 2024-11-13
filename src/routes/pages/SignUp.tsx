@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import DaumPost from '../../components/DaumPost';
+import DaumAddress from '../../components/DaumAddress';
 
 export default function SignUp() {
   const [address, setAddress] = useState('');
@@ -148,7 +148,7 @@ export default function SignUp() {
               />
             </label>
 
-            <DaumPost setAddress={setAddress} />
+            <DaumAddress setAddress={setAddress} />
           </div>
           <button
             type="submit"
