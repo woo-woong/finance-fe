@@ -1,3 +1,5 @@
+import kakaoLogo from '../../assets/images/kakao-login.png';
+
 export default function Login() {
   return (
     <div className="flex flex-col items-center p-20 rounded-md shadow-md">
@@ -19,7 +21,7 @@ export default function Login() {
           로그인
         </button>
         <h1 className="text-lg font-bold">SNS 로그인</h1>
-        <img src="" alt="" />
+        <img src={kakaoLogo} alt="kakao-login" className="w-10" />
         <div>카카오톡</div>
       </form>
     </div>
