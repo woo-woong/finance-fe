@@ -1,3 +1,5 @@
+import DaumPost from '../../components/DaumPost';
+
 export default function SignUp() {
   return (
     <div className="flex justify-center w-full">
@@ -113,6 +115,7 @@ export default function SignUp() {
                 required
               />
             </label>
+            <DaumPost />
           </div>
 
           <button
