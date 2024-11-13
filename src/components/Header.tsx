@@ -23,18 +23,30 @@ export default function Header() {
           >
             적금
           </NavLink>
-          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+          <NavLink
+            to="/annuity-savings"
+            className="hover:text-blue-500 cursor-pointer transition-colors"
+          >
             연금 저축
-          </li>
-          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+          </NavLink>
+          <NavLink
+            to="/mortgage-loan"
+            className="hover:text-blue-500 cursor-pointer transition-colors"
+          >
             주택담보대출
-          </li>
-          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+          </NavLink>
+          <NavLink
+            to="/rent-house-loan"
+            className="hover:text-blue-500 cursor-pointer transition-colors"
+          >
             전세자금대출
-          </li>
-          <li className="hover:text-blue-500 cursor-pointer transition-colors">
+          </NavLink>
+          <NavLink
+            to="/credit-loan"
+            className="hover:text-blue-500 cursor-pointer transition-colors"
+          >
             개인신용대출
-          </li>
+          </NavLink>
         </ul>
       </nav>
     </header>

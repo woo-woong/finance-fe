@@ -3,6 +3,10 @@ import DefaultLayout from './routes/layouts/Default';
 import Home from './routes/pages/Home';
 import Deposit from './routes/pages/Deposit';
 import Savings from './routes/pages/Savings';
+import AnnunitySavings from './routes/pages/AnnuitySavings';
+import MortgageLoan from './routes/pages/MortgageLoan';
+import RentHouseLoan from './routes/pages/RentHouseLoan';
+import CreditLoan from './routes/pages/CreditLoan';
 
 const router = createBrowserRouter([
   {
@@ -11,6 +15,10 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/deposit', element: <Deposit /> },
       { path: '/savings', element: <Savings /> },
+      { path: '/annuity-savings', element: <AnnunitySavings /> },
+      { path: '/mortgage-loan', element: <MortgageLoan /> },
+      { path: '/rent-house-loan', element: <RentHouseLoan /> },
+      { path: '/credit-loan', element: <CreditLoan /> },
     ],
   },
 ]);
