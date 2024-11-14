@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ky from 'ky';
 
-const API_URL = 'https://example.com/api';
+const API_URL = 'http://localhost:8080/login';
 
 export default function useLogin() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
@@ -9,19 +9,24 @@ export default function useLogin() {
 
   const login = async (username: string, password: string) => {
     try {
-      const response = await ky
-        .post(`${API_URL}/login`, {
-          json: {
-            username,
-            password,
-          },
-        })
-        .json();
+      const response = await ky.post(`${API_URL}`, {
+        json: {
+          username,
+          password,
+        },
+        credentials: 'include',
+      });
 
-      const { token }: any = response;
+      const contentType = response.headers.get('content-type');
 
-      // 로그인 성공 시 토큰을 localStorage에 저장하고, 로그인 상태를 업데이트
-      localStorage.setItem('token', token);
+      let token;
+      if (contentType?.includes('application/json')) {
+        const data: any = await response.json();
+        token = data.token;
+      } else {
+        token = await response.text();
+      }
+
       setIsLoggedIn(true);
       console.log('로그인 성공', token);
     } catch (err) {
@@ -30,21 +35,14 @@ export default function useLogin() {
     }
   };
 
-  const handleLoginClick = (username: string, password: string) => {
-    login(username, password);
+  const handleLoginClick = async (username: string, password: string) => {
+    await login(username, password);
   };
 
-  const apiWithAuth = ky.create({
-    prefixUrl: API_URL,
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-    },
-  });
-
   return {
-    isLoggedIn,
+    login,
     handleLoginClick,
-    apiWithAuth,
+    isLoggedIn,
     error,
   };
 }
