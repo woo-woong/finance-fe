@@ -33,4 +33,8 @@ export default function useLogin() {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   });
+  return {
+    handleLoginClick,
+    apiWithAuth,
+  };
 }
