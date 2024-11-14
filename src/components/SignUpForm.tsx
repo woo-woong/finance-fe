@@ -37,9 +37,12 @@ export default function SignUpForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await ky.post('http://localhost:8080/signup', {
-        json: formData,
-      });
+      const response = await ky.post(
+        `${process.env.REACT_APP_FINANCIAL_API_URL}signup`,
+        {
+          json: formData,
+        }
+      );
 
       if (response.ok) {
         console.log('회원가입 성공');

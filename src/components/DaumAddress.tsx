@@ -5,8 +5,7 @@ export default function DaumAddress({
 }: {
   setAddress: React.Dispatch<React.SetStateAction<string>>;
 }) {
-  const scriptUrl =
-    'https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js';
+  const scriptUrl = process.env.REACT_APP_DAUM_ADDRESS_API;
   const open = useDaumPostcodePopup(scriptUrl);
 
   const handleComplete = (data: any) => {

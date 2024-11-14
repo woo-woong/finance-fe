@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import ky from 'ky';
 
-const API_URL = 'http://localhost:8080/login';
+const API_URL = `${process.env.REACT_APP_FINANCIAL_API_URL}login`;
 
 export default function useLogin() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);

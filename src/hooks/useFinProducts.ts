@@ -11,7 +11,7 @@ export default function useFinProducts({
   searchParams: Record<string, string>;
   defaultVisibleCount: number;
 }) {
-  const API_URL = `http://localhost:8080/finance/${path}`;
+  const API_URL = `${process.env.REACT_APP_FINANCIAL_API_URL}finance/${path}`;
   const memoizedSearchParams = useMemo(
     () => searchParams,
     [JSON.stringify(searchParams)]
