@@ -37,7 +37,7 @@ export default function SignUpForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await ky.post('/signup', {
+      const response = await ky.post('http://localhost:8080/signup', {
         json: formData,
       });
 
