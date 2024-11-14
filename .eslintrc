@@ -21,10 +21,16 @@
         "tsx": "never",
         "json": "never"
       }
-    ]
+    ],
+    "import/no-unresolved": "error"
   },
   "settings": {
     "import/resolver": {
+      // ESLint에게 TypeScript의 경로 별칭을 이해시키는 설정
+      "typescript": {
+        // TypeScript 설정 파일 위치 지정
+        "project": "./tsconfig.json"
+      },
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".json"]
       }
