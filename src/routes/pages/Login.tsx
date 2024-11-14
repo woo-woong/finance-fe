@@ -30,7 +30,7 @@ export default function Login() {
             onChange={(e) => setUsername(e.target.value)}
           />
           <input
-            type="text"
+            type="password"
             placeholder="비밀번호"
             className="p-2 border border-gray-40"
             value={password}
