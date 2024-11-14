@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import ky from 'ky';
 
-export default function useLogin() {
-  const API_URL = 'https://example.com/api';
+const API_URL = 'https://example.com/api';
 
-  const login = async (username: any, password: any) => {
+export default function useLogin() {
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const login = async (username: string, password: string) => {
     try {
       const response = await ky
         .post(`${API_URL}/login`, {
@@ -15,15 +19,18 @@ export default function useLogin() {
         .json();
 
       const { token }: any = response;
-      localStorage.setItem('token', token), console.log('로그인 성공', token);
-    } catch (error) {
-      console.error('로그인 실패', error);
+
+      // 로그인 성공 시 토큰을 localStorage에 저장하고, 로그인 상태를 업데이트
+      localStorage.setItem('token', token);
+      setIsLoggedIn(true);
+      console.log('로그인 성공', token);
+    } catch (err) {
+      setError('로그인 실패. 아이디와 비밀번호를 확인해주세요.');
+      console.error('로그인 실패', err);
     }
   };
 
-  const handleLoginClick = () => {
-    const username = 'test';
-    const password = 'test';
+  const handleLoginClick = (username: string, password: string) => {
     login(username, password);
   };
 
@@ -33,8 +40,11 @@ export default function useLogin() {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     },
   });
+
   return {
+    isLoggedIn,
     handleLoginClick,
     apiWithAuth,
+    error,
   };
 }

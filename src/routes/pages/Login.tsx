@@ -1,32 +1,49 @@
 import { NavLink } from 'react-router-dom';
 import kakaoLogo from '@assets/images/kakao-login.png';
+import useLogin from '@hooks/useLogin';
+import { useState } from 'react';
 
 export default function Login() {
   const handleSocialLoginClick = () => {
     console.log('test');
   };
+
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const { handleLoginClick, error } = useLogin();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    handleLoginClick(username, password);
+  };
+
   return (
     <div className="flex flex-col items-center p-20 rounded-md shadow-md">
       <h1 className="text-xl font-bold mb-7">로그인</h1>
-      <form action="" className="flex flex-col items-center">
+      <form onSubmit={handleSubmit} className="flex flex-col items-center">
         <div className="flex flex-col w-full gap-2 mb-5">
           <input
             type="text"
             placeholder="아이디"
             className="p-2 border border-gray-40"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <input
             type="text"
             placeholder="비밀번호"
             className="p-2 border border-gray-40"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </div>
         <button
-          type="button"
+          type="submit"
           className="w-full p-3 font-semibold transition-colors bg-blue-200 border rounded-sm cursor-pointer hover:bg-blue-400"
         >
           로그인
         </button>
+        {error && <p className="text-sm text-red-500">{error}</p>}
         <nav>
           <ul className="flex gap-2 p-4">
             <li>아이디 찾기</li> |<li>비밀번호 찾기</li> |
