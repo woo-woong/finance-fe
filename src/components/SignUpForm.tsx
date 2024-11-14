@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import ky from 'ky';
-import DaumAddress from './DaumAddress';
-import SignUpFormInput from './SignUpFormInput';
+import DaumAddress from '@components/DaumAddress';
+import SignUpFormInput from '@components/SignUpFormInput';
 
 export default function SignUpForm() {
   const [formData, setFormData] = useState({

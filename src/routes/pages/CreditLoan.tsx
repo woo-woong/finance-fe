@@ -1,4 +1,4 @@
-import ProductList from '../../components/ProductList';
+import ProductList from '@components/ProductList';
 
 // 개인신용대출
 export default function CreditLoan() {

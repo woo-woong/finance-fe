@@ -1,4 +1,4 @@
-import ProductList from '../../components/ProductList';
+import ProductList from '@components/ProductList';
 
 // 주택담보대출
 export default function MortgageLoan() {

@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import kakaoLogo from '../../assets/images/kakao-login.png';
+import kakaoLogo from '@assets/images/kakao-login.png';
 
 export default function Login() {
   const handleSocialLoginClick = () => {

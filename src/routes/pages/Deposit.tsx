@@ -1,4 +1,4 @@
-import ProductList from '../../components/ProductList';
+import ProductList from '@components/ProductList';
 
 // 정기예금
 export default function Deposit() {

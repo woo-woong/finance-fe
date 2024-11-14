@@ -1,4 +1,4 @@
-import ProductList from '../../components/ProductList';
+import ProductList from '@components/ProductList';
 
 // 연금 저축
 export default function AnnunitySavings() {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from 'react';
 import ky from 'ky';
-import { FinanceProduct } from '../models/finance-product.interface';
+import { FinanceProduct } from '@models/finance-product.interface';
 
 export default function useFinProducts({
   path,

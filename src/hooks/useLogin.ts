@@ -1,4 +1,5 @@
 import ky from 'ky';
+
 export default function useLogin() {
   const API_URL = 'https://example.com/api';
 

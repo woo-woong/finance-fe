@@ -1,4 +1,4 @@
-import ProductList from '../../components/ProductList';
+import ProductList from '@components/ProductList';
 
 // 전세자금대출
 export default function RentHouseLoan() {

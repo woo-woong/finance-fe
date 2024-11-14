@@ -1,5 +1,5 @@
-import useFinProducts from '../hooks/useFinProducts';
-import Card from './Card';
+import useFinProducts from '@hooks/useFinProducts';
+import Card from '@components/Card';
 
 export default function ProductList({
   path,
