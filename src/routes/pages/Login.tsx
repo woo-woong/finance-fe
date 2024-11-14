@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import kakaoLogo from '../../assets/images/kakao-login.png';
 
 export default function Login() {
-  const handleLoginClick = () => {
+  const handleSocialLoginClick = () => {
     console.log('test');
   };
   return (
@@ -41,7 +41,7 @@ export default function Login() {
           <button
             type="button"
             className="flex flex-col items-center gap-2 mt-3 transition-all duration-300 transform hover:scale-102 hover:shadow-lg active:scale-98"
-            onClick={handleLoginClick}
+            onClick={handleSocialLoginClick}
           >
             <img
               src={kakaoLogo}
