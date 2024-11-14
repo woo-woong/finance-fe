@@ -135,6 +135,7 @@ export default function SignUpForm() {
               value={formData.detailAddress}
               onChange={handleInputChange}
               disabled={formData.address.length === 0}
+              required={false}
             />
             <DaumAddress setAddress={handleAddressChange} />
           </div>
