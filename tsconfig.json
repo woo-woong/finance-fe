@@ -6,7 +6,8 @@
       "@hooks/*": ["src/hooks/*"],
       "@models/*": ["src/models/*"],
       "@routes/*": ["src/routes/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["src/assets/*"],
+      "@stores/*": ["src/stores/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
