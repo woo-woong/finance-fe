@@ -1,6 +1,9 @@
+import useAuthStore from '@stores/authStore';
 import { NavLink } from 'react-router-dom';
 
 export default function Header() {
+  const { isAuthenticated } = useAuthStore();
+
   return (
     <header className="w-full bg-white shadow-md">
       <nav className="max-w-screen-xl px-6 py-4 mx-auto">
@@ -50,18 +53,21 @@ export default function Header() {
             </NavLink>
           </li>
           <li className="flex gap-3">
-            <NavLink
-              to="/login"
-              className="transition-colors cursor-pointer hover:text-blue-500"
-            >
-              로그인
-            </NavLink>
-            <NavLink
-              to="/logout"
-              className="transition-colors cursor-pointer hover:text-blue-500"
-            >
-              로그아웃
-            </NavLink>
+            {isAuthenticated ? (
+              <NavLink
+                to="/logout"
+                className="transition-colors cursor-pointer hover:text-blue-500"
+              >
+                로그아웃
+              </NavLink>
+            ) : (
+              <NavLink
+                to="/login"
+                className="transition-colors cursor-pointer hover:text-blue-500"
+              >
+                로그인
+              </NavLink>
+            )}
           </li>
         </ul>
       </nav>
