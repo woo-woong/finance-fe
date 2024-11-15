@@ -21,7 +21,7 @@ export default function useLogin() {
 
       let token;
       if (contentType?.includes('application/json')) {
-        const data: any = await response.json();
+        const data = await response.json<{ token: string }>();
         token = data.token;
       } else {
         token = await response.text();

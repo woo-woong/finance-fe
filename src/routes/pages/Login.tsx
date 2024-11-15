@@ -4,8 +4,12 @@ import useLogin from '@hooks/useLogin';
 import { useState } from 'react';
 
 export default function Login() {
+  const KAKAO_REST_API_KEY = process.env.REACT_APP_KAKAO_REST_API_KEY;
+  const KAKAO_REDIRECT_URL = process.env.REACT_APP_KAKAO_REDIRECT_URL;
+  const KAKAO_AUTH_URI = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_REST_API_KEY}&redirect_uri=${KAKAO_REDIRECT_URL}&response_type=code`;
+
   const handleSocialLoginClick = () => {
-    console.log('test');
+    window.location.href = KAKAO_AUTH_URI;
   };
 
   const [username, setUsername] = useState('');
