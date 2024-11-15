@@ -8,6 +8,7 @@ import MortgageLoan from '@routes/pages/MortgageLoan';
 import RentHouseLoan from '@routes/pages/RentHouseLoan';
 import CreditLoan from '@routes/pages/CreditLoan';
 import Login from '@routes/pages/Login';
+import Logout from '@routes/pages/Logout';
 import SignUp from '@routes/pages/SignUp';
 import KakaoOauth from '@routes/pages/KakaoOauth';
 
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       { path: '/rent-house-loan', element: <RentHouseLoan /> },
       { path: '/credit-loan', element: <CreditLoan /> },
       { path: '/login', element: <Login /> },
+      { path: '/logout', element: <Logout /> },
       { path: '/signup', element: <SignUp /> },
       { path: '/login/oauth2/code/kakao/', element: <KakaoOauth /> },
     ],

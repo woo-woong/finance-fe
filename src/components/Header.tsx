@@ -49,12 +49,20 @@ export default function Header() {
               개인신용대출
             </NavLink>
           </li>
-          <NavLink
-            to="/login"
-            className="transition-colors cursor-pointer hover:text-blue-500"
-          >
-            로그인
-          </NavLink>
+          <li className="flex gap-3">
+            <NavLink
+              to="/login"
+              className="transition-colors cursor-pointer hover:text-blue-500"
+            >
+              로그인
+            </NavLink>
+            <NavLink
+              to="/logout"
+              className="transition-colors cursor-pointer hover:text-blue-500"
+            >
+              로그아웃
+            </NavLink>
+          </li>
         </ul>
       </nav>
     </header>
